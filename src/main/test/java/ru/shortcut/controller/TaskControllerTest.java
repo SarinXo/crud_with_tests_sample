@@ -139,7 +139,7 @@ class TaskControllerTest extends PostgresContainer {
     }
     @Test
     void getAllTasksSuccess() throws Exception {
-        mockMvc.perform(get("/v1/task/")
+        mockMvc.perform(get("/v1/task")
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.size()", is(2)))

@@ -105,7 +105,7 @@ class TaskServiceTest {
 
 
         when(taskMapper.toEntity(inputDto)).thenReturn(entityToSave);
-        when(taskRepository.save(entityToSave)).thenReturn(new Task(3L, "Jira3", "JiraCodeTask3", "NEW"));
+        when(taskRepository.save(entityToSave)).thenReturn(savedEntity);
         when(taskMapper.toDto(savedEntity)).thenReturn(expectedDto);
 
         TaskDto result = taskService.createTask(inputDto);
